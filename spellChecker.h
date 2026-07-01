@@ -2,6 +2,7 @@
 #define SPELL_CHECKER
 
 #include <string>
+#include <vector>
 class SpellChecker{
 public:
     SpellChecker(){
@@ -10,6 +11,7 @@ public:
         word = wd;
     }
     std::string findClosestWord();
+    std::vector<std::string> getWordsWithMatchingLetters(std::string word);
 private:
     std::string word;
     std::string getWord() const;
