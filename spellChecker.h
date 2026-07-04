@@ -14,6 +14,8 @@ public:
     std::vector<std::string> getWordsWithMatchingLetters(std::string word);
 private:
     std::string word;
-    std::string getWord() const;
+    std::string getWord() const{
+        return word;
+    }
 };
 #endif
