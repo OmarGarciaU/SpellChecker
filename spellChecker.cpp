@@ -2,11 +2,22 @@
 #include <fstream>
 #include <iostream>
 #include <string>
+#include <utility>
 #include <vector>
 
 std::string SpellChecker::findClosestWord(){
     readFile();
-    std::string inWord, outWord;
+    std::string outWord;
+    if(word.size() != 0){
+        filterWordList(word.size());
+    }else{
+        std::cerr << "empty Word" << std::endl;
+        return "";
+    }
+
+    for (int i{0}; i<word.size(); i++) {
+
+    }
     return outWord;
 }
 
@@ -24,17 +35,18 @@ void SpellChecker::readFile(){
 }
 
 void SpellChecker::printWordList(){
-    if (wordList.size() > 15) {
-        for(int i{0}; i < 15; i++){
-            std::cout << wordList.at(i) << std::endl;
-        }
-        std::cout << "Press p to print the whole list: ";
-        char choice;
-        std::cin >> choice;
-        if (choice == 'p' || choice == 'P') {
-            for (int i{15}; i<wordList.size(); i++) {
-                std::cout << wordList.at(i) << std::endl;
-            }
-        }
+    for (std::string s : wordList) {
+        std::cout << s << std::endl;
     }
 }
+
+void SpellChecker::filterWordList(int size){
+    std::vector<std::string> newList;
+    for(int i{0}; i < wordList.size(); i++) {
+        if (wordList.at(i).size() == size) {
+            newList.push_back(wordList.at(i));
+        }
+    }
+    wordList = std::move(newList);
+}
+
