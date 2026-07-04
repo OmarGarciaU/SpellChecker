@@ -9,6 +9,7 @@ class SpellChecker{
 public:
     SpellChecker(std::string wd){
         word = wd;
+        word = toUpper(word);
         readFile();
     }
     void assignWord(std::string wd){
@@ -26,11 +27,13 @@ public:
     //std::vector<std::string> getWordsWithMatchingLetters(std::string word);
     void readFile();
     void printWordList();
+    void printWord();
 private:
     std::string word;
     std::vector<std::string> wordList;
     std::string getWord() const{
         return word;
     }
+    std::string toUpper(std::string);
 };
 #endif

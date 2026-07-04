@@ -3,8 +3,6 @@
 using namespace std;
 
 int main(){
-    SpellChecker spellChecker("Hello");
-    spellChecker.readFile();
-    spellChecker.filterWordList(5);
-    spellChecker.printWordList();
+    SpellChecker spellChecker("Coasterf");
+    cout << spellChecker.findClosestWord() << endl;
 }
