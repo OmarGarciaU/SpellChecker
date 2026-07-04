@@ -14,6 +14,7 @@ public:
     std::string findClosestWord();
     //std::vector<std::string> getWordsWithMatchingLetters(std::string word);
     void readFile();
+    void printWordList();
 private:
     std::string word;
     std::vector<std::string> wordList;

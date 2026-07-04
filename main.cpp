@@ -4,5 +4,6 @@ using namespace std;
 
 int main(){
     SpellChecker spellChecker("Hello");
-
+    spellChecker.readFile();
+    spellChecker.printWordList();
 }
